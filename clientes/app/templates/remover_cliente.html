@@ -21,6 +21,10 @@
         <li><a href="{% url 'app:lista_clientes' %}">Voltar</a></li>
         <li><a href="{% url 'app:delete_cliente' cliente.id %}">Deletar</a></li>
     </div>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="Deletar">
+    </form>
 </body>
 
 </html>

@@ -20,7 +20,7 @@ class ClienteCreateView(CreateView):
 
 class ClienteListView(ListView):
     model = Cliente
-    template_name = "lista_templates.html"
+    template_name = "lista_clientes.html"
     context_object_name = "clientes"
 
 
@@ -34,4 +34,10 @@ class ClienteUpdateView(UpdateView):
     model = Cliente
     fields = "__all__"
     template_name = "form_template.html"
+    success_url = reverse_lazy("app:lista_clientes")
+
+
+class ClienteDeleteView(DeleteView):
+    model = Cliente
+    template_name = "remover_cliente.html"
     success_url = reverse_lazy("app:lista_clientes")
